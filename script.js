@@ -26,7 +26,8 @@
         // add this question and its answers to the output
         output.push(
           `<div class="question"> ${currentQuestion.question} </div>
-          <div class="answers"> ${answers.join('')} </div>`
+          <div class="answers"> ${answers.join('')} </div>
+            <p class="correct"></p><p class="fonte"></p>`
         );
       }
     );
@@ -39,7 +40,8 @@
 
     // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll('.answers');
-
+    const correct = quizContainer.querySelectorAll('.correct');
+    const fonte = quizContainer.querySelectorAll('.fonte');
     // keep track of user's answers
     let numCorrect = 0;
 
@@ -58,11 +60,22 @@
 
         // color the answers green
         answerContainers[questionNumber].style.color = 'lightgreen';
+
+        correct[questionNumber].innerHTML = "";
+        fonte[questionNumber].innerHTML = "";
+        fonte[questionNumber].append('Fonte e mais informações em: '+currentQuestion.fonte);
       }
       // if answer is wrong or blank
       else{
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
+
+        correct[questionNumber].innerHTML = "";
+        fonte[questionNumber].innerHTML = "";
+        correct[questionNumber].append('Resposta correta é : '+currentQuestion.correctAnswer);
+        fonte[questionNumber].append('Fonte e mais informações em: '+currentQuestion.fonte);
+        //answerContainers[questionNumber]>p.prepend('Resposta correta é : '+currentQuestion.correctAnswer);
+        //answerContainers[questionNumber].append('Resposta correta é : '+currentQuestion.correctAnswer, document.createElement("b"));
       }
     });
 
@@ -85,7 +98,8 @@
         b: "A transmissão ocorre, principalmente, de pessoa para pessoa e seu período de incubação, que é o tempo para que os primeiros sintomas apareçam, pode ser de 1 a 10 dias.",
         c: "A transmissão ocorre, principalmente, de pessoa para pessoa e seu período de incubação, que é o tempo para que os primeiros sintomas apareçam, pode ser de 0 a 14 dias."
       },
-      correctAnswer: "a"
+      correctAnswer: "a",
+      fonte: "teste 1"
     },
 	{
       question: "2)Quem está mais vulnerável à COVID-19?.",
@@ -94,7 +108,8 @@
         b: "Somente pessoas com condições médicas pré-existentes (como pressão alta, doenças cardíacas, doenças pulmonares, câncer ou diabete) estão mais suscetíveis a desenvolver casos mais severos de COVID-19.",
         c: "Pessoas idosas e pessoas com condições médicas pré-existentes (como pressão alta, doenças cardíacas, doenças pulmonares, câncer ou diabete) estão mais suscetíveis a desenvolver casos mais severos de COVID-19."
       },
-      correctAnswer: "c"
+      correctAnswer: "c",
+      fonte: "teste 2"
     },
     {
       question: "3)Devo usar uma máscara para me proteger?.",
@@ -103,7 +118,8 @@
         b: "Sim, as máscaras devem ser feitas nas medidas corretas para cobrir totalmente a boca ou o nariz.",
         c: "Sim, a utilização de máscaras impede a disseminação de gotículas expelidas do nariz ou da boca do usuário no ambiente, garantindo uma barreira física que vem auxiliando na mudança de comportamento da população e diminuição de casos. "
       },
-      correctAnswer: "c"
+      correctAnswer: "c",
+      fonte: "teste 3"
     }
   ];
 
