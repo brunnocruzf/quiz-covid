@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => NULL,
+        'name' => 'brunno.cruz/quiz',
+        'dev' => true,
+    ),
+    'versions' => array(
+        'brunno.cruz/quiz' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => NULL,
+            'dev_requirement' => false,
+        ),
+        'erandir/plug-http' => array(
+            'pretty_version' => 'v2.0',
+            'version' => '2.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../erandir/plug-http',
+            'aliases' => array(),
+            'reference' => 'e1b9bb19dbfc85d3183f8850f14ddd702312ab50',
+            'dev_requirement' => false,
+        ),
+        'erandir/plug-route' => array(
+            'pretty_version' => 'v4.4',
+            'version' => '4.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../erandir/plug-route',
+            'aliases' => array(),
+            'reference' => '3493bcf064d397f2b38c9c7f583591d9267429e9',
+            'dev_requirement' => false,
+        ),
+    ),
+);
